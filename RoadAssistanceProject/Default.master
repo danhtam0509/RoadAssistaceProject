@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="_Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="Content/customStyle.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <!-- Navigation bar -->    
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
+      <a class="navbar-brand logo" href="Home.aspx">Road</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.aspx"> <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="~/Services.aspx" runat="server"> <i class="fa fa-globe"></i> Services </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="~/FeedbackForm.aspx" runat="server"> <i class="fa fa-comments"></i> Feedback Form </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="~/AboutUs.aspx" runat="server"> <i class="fa fa-envelope-square"></i> About us </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="~/Contact.aspx" runat="server"> <i class="fa fa-phone"></i> Contact </> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="~/ViewProfile.aspx" runat="server"> <i class="fa fa-user"></i> View Profile </a>
+          </li>
+        </ul>
+          <ul class="navbar-nav mr-sm-2">
+              <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         </ul>
+
+      </div>
+    </nav>
+
+
+  <main role="main" class="container">
+     
+      
+ 
+ 
+
+
+        <form id="form1" runat="server">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </form>
+
+  </main>
+        <!-- Footer -->
+        <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="Home.aspx">Home</a></li>
+                        <li><a href="Services.aspx">Services</a></li>
+                        <li><a href="ViewProfile.aspx">View Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="AboutUs.aspx">Company Information</a></li>
+                        <li><a href="ContactUs.aspx">Contact us</a></li>
+                        <li><a href="#">FeedbackForm.aspx</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Account</h5>
+                    <ul>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Forget Password</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Members</h5>
+                    <ul>
+                        <li> Tam Dang 101092895</li>
+                        <li> Anthony Cadwell: 101085288</li>
+                        <li> Hao Bui: 101104656 </li>
+                        <li> Quan Trinh: 101094529</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+
+        </div>
+        <div class="footer-copyright">
+            <p>©2018 Road Assistance. All right reserved </p>
+        </div>
+    </footer>
+
+        <!-- Script -->
+
+
+</body>
+</html>
