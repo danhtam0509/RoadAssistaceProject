@@ -55,15 +55,10 @@
   <main role="main" class="container">
      
       
- 
- 
-
-
-        <form id="form1" runat="server">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
             </asp:ContentPlaceHolder>
-        </form>
+     
 
   </main>
         <!-- Footer -->
