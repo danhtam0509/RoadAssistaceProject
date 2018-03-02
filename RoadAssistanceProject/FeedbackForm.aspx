@@ -29,7 +29,7 @@
               <p>Feel free to shout us by feeling the feeback form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row1">
                 <div class="col-md-8 col-md-offset-2">
-                  <form class="form-horizontal">
+                  <form class="form-horizontal" runat="server">
                     <div class="form-group">
 						<label for="form_name">Please enter your full name</label>
 						<asp:TextBox ID="txtName" class="form-control" runat="server"></asp:TextBox>
