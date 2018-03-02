@@ -13,6 +13,12 @@
             .row1{
                 padding-left: 20%;
             }
+	    #contact {
+                background: #333333;
+                color: #f4f4f4;
+                padding-bottom: 10px;
+                padding-top: 20px;
+            }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
