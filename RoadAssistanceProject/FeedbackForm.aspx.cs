@@ -26,6 +26,7 @@ public partial class FeedbackForm : System.Web.UI.Page
 
     protected void btnSend_Click(object sender, EventArgs e)
     {
-        Server.Transfer("FBConfirm.aspx");
+        if(IsValid)
+            Server.Transfer("FBConfirm.aspx");
     }
 }
