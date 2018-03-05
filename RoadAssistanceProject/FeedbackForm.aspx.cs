@@ -11,6 +11,12 @@ public partial class FeedbackForm : System.Web.UI.Page
     {
 
     }
+    
+    protected void btnSend_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("Feedback_confirm.aspx");
+    }
+    
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
     {
         if (chkYes.Checked == false && chkNo.Checked == false)
