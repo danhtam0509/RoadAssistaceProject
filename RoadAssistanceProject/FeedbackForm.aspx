@@ -19,6 +19,16 @@
                 padding-top: 20px;
             }
         </style>
+	<script>
+            function check(oSrc, args) {
+                if (chkYes.Checked == false && chkNo.Checked == false) {
+                    args.IsValid = false;
+                }
+                else if (chkYes.Checked == true && chkNo.Checked == true) {
+                    args.IsValid = false;
+                }
+            }
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <section id="contact" class="content-section text-center">
@@ -46,7 +56,7 @@
 						<asp:CheckBox ID="chkYes" runat="server" Text="Yes, I'm satisfied" />
 						<asp:CheckBox ID="chkNo" runat="server" Text="No, I'm not satisfied" />
 						    <br />
-						<asp:CustomValidator ID="CustomValidator1" runat="server" Display="Dynamic" ErrorMessage="You have to choose one option" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
+						<asp:CustomValidator ID="CustomValidator1" runat="server" Display="Dynamic" ErrorMessage="You have to choose one option" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ClientValidationFunction="check"></asp:CustomValidator>
 					    </div>
                     </div>
                     <div class="form-group ">
