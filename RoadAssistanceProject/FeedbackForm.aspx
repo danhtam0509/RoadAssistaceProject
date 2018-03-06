@@ -26,7 +26,7 @@
         <div class="contact-section">
             <div class="container1">
               <h2>Feedback Form</h2>
-              <p>Feel free to shout us by feeling the feeback form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
+              <p>Feel free to show us by filing the feeback form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row1">
                 <div class="col-md-8 col-md-offset-2">
                   <form class="form-horizontal" runat="server">
