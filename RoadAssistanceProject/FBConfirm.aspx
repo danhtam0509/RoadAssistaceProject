@@ -1,7 +1,6 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="FBConfirm.aspx.cs" Inherits="FBConfirm" %>
+<%@ Page Title="Feedback Confirm" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="FBConfirm.aspx.cs" Inherits="FBConfirm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-        <title>Feedback Confirm</title>
         <style>
             .container1 {
                 padding-right: 20%;
