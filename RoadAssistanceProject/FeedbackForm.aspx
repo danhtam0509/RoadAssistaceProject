@@ -54,7 +54,7 @@
 						<label for="choices">Add comments about the support that you received (optional) ?</label>
 						<asp:TextBox ID="txtComment" class="form-control" runat="server" TextMode="MultiLine" Height="100px" ></asp:TextBox>
                     </div>
-                    <button type="submit" class="btn btn-default">Send Message</button>
+                    <asp:Button ID="btnSend" class="btn btn-primary btn-sm" runat="server" Text="Send Message" OnClick="btnSend_Click" />
                   </form>
                 </div>
               </div>
