@@ -1,8 +1,6 @@
 ﻿/* Show it is fixed to the top */
 body {
     padding-top: 4.5rem;
-    margin-right: -2rem; 
-    margin-bottom: -2rem;
 }
 
 .navbar {
@@ -103,4 +101,7 @@ main.container {
         text-decoration: none;
         transition: color 0.2s;
     }
-
+.max-width-center {
+    max-width: 50%;
+    margin: 0 auto;
+}

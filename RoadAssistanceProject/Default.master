@@ -6,7 +6,9 @@
 <head runat="server">
 
     <meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Style-->
         <link href="Content/bootstrap.min.css" rel="stylesheet" />
         <link href="Content/font-awesome.min.css" rel="stylesheet" />
         <link href="Content/customStyle.css" rel="stylesheet" />
@@ -16,13 +18,17 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+    <form id="form1" runat="server">
+
+
      <!-- Navigation bar -->    
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black">
       <a class="navbar-brand logo" href="Home.aspx">Road</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse bg-black text-center" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="Home.aspx"> <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
@@ -35,12 +41,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="~/AboutUs.aspx" runat="server"> <i class="fa fa-envelope-square"></i> About us </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="~/Contact.aspx" runat="server"> <i class="fa fa-phone"></i> Contact </> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="~/ViewProfile.aspx" runat="server"> <i class="fa fa-user"></i> View Profile </a>
           </li>
         </ul>
           <ul class="navbar-nav mr-sm-2">
@@ -100,6 +100,21 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <div class="list-inline-item"> 
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" StaticSubMenuIndent="10px">
+                    <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#B5C7DE" />
+                    <DynamicSelectedStyle BackColor="#507CD1" />
+                    <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#507CD1" />
+               </asp:Menu>
+
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+             </div>
+        </div>
         <div class="social-networks">
             <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -109,11 +124,17 @@
 
         </div>
         <div class="footer-copyright">
-            <p>©2018 Road Assistance. All right reserved </p>
+            <p class="text-center">©2018 Road Assistance. All right reserved </p>
         </div>
     </footer>
 
         <!-- Script -->
+    <script src="Scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+
+    </form>
 
 
 </body>
