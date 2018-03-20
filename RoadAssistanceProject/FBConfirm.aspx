@@ -18,7 +18,6 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <form id="form1" runat="server">
 <section id="contact" class="content-section text-center">
   <div class="contact-section">
     <div class="container1">
@@ -37,6 +36,5 @@
     </div>
   </div>
 </section>
-    </form>
 </asp:Content>
 
