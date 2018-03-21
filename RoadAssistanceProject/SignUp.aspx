@@ -14,6 +14,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container max-width-center">
+        <h1 class="text-center"> Sign Up</h1>
         <!--Profile Picture-->
         <div class="form-group">
             <label for="FileUpLoadControl" class="control-label"><b>Profile Picture:</b></label>
@@ -26,7 +27,7 @@
             <label for="FirstName" class="control-label"><b>First Name:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="FirstName"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="FirstName"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="FirstName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Last Name-->
@@ -34,7 +35,7 @@
             <label for="LastName" class="control-label"><b>Last Name:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="LastName"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="LastName"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="LastName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Email-->
@@ -42,7 +43,7 @@
             <label for="Email" class="control-label"><b>Email:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Email"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Email"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Email" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Password-->
@@ -50,7 +51,7 @@
             <label for="Password" class="control-label"><b>Password:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Password"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Password"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Password" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Terms of Services and Email receive agreement-->
