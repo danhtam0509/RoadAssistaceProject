@@ -14,6 +14,7 @@
                 color: #f4f4f4;
                 padding-bottom: 10px;
                 padding-top: 20px;
+                min-height: 100%;
             }
         </style>
 </asp:Content>
@@ -27,7 +28,7 @@
             <p>Your feedbacks are valuable to us.</p>
           <hr>
           <p>
-            Having trouble? <a href="">Contact us</a>
+            Having trouble? <a href="#">Contact us</a>
           </p>
           <p class="lead">
               <asp:Button ID="btnContinue" class="btn btn-primary btn-sm" runat="server" Text="Continue to homepage" OnClick="btnContinue_Click" />
