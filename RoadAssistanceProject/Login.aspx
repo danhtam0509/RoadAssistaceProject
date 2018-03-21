@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="usr" class="control-label"><b>Username:</b></label>
             <div class="">
-                <input runat="server" type="text" class="form-control" placeholder="Email Address" id="usr">
+                <input runat="server" type="text" class="form-control" placeholder="Email Address" id="usr"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="usr" Display="Dynamic" ErrorMessage="Username is required" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Password-->
@@ -33,7 +33,9 @@
         </div>
         <!--Submit-->
         <div class="form-group">
-            <label for="sm" class="control-label"></label>
+            <label for="sm" class="control-label">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="pass" Display="Dynamic" ErrorMessage="Password is required" ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
             <div class="text-center">
                 <input runat="server" type="submit" value="Submit" class="btn btn-primary">
             </div>

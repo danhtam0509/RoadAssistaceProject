@@ -8,13 +8,13 @@
                 margin-right: auto;
                 margin-left: auto;
                 padding-top: 20px;
+                min-height: 500px;
             }
             #contact {
                 background: #333333;
                 color: #f4f4f4;
                 padding-bottom: 10px;
                 padding-top: 20px;
-                min-height: 100%;
             }
         </style>
 </asp:Content>
