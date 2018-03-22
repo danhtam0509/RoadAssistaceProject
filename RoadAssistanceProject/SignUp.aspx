@@ -52,12 +52,22 @@
                 <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Email"></asp:RequiredFieldValidator>
             </div>
         </div>
+        <!--Username-->
+        <div class="form-group">
+            <label for="Username" class="control-label"><b>Username:</b></label>
+            <div>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Username"></asp:TextBox>
+                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Username"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Username must be all letters and numbers and begin with a letter" Display="Dynamic" ControlToValidate="Username" OnServerValidate="username_Validate"></asp:CustomValidator>
+            </div>
+        </div>
         <!--Password-->
         <div class="form-group">
             <label for="Password" class="control-label"><b>Password:</b></label>
             <div>
                 <asp:TextBox TextMode="Password" Width="400px" runat="server" CssClass="form-control" ID="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Password"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Password must be 8 to 16 characters long, start with a letter and contain at least one ! Or * and digit in it" Display="Dynamic" ControlToValidate="Password" OnServerValidate="password_Validate"></asp:CustomValidator>                            
             </div>
         </div>
         <!--Terms of Services and Email receive agreement-->
