@@ -22,6 +22,8 @@ public partial class _Default : System.Web.UI.Page
     {
         if (Username.Text.ToLower()[0] >= 'a' && Username.Text.ToLower()[0] <= 'z') 
             args.IsValid = true;
+        if (Username.Text.ToLower()[0] >= '0' && Username.Text.ToLower()[0] <= '9') 
+            args.IsValid = false;
 
         String specialcase = "~!@#$%^&*()_+{}[]\\|;':\"<>,./?";
         foreach(char c in specialcase)
