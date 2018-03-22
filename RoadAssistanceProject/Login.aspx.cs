@@ -20,8 +20,8 @@ public partial class _Default : System.Web.UI.Page
 
     protected void username_Validate(object sender, ServerValidateEventArgs args)
     {
-        if (Username.Text.ToLower()[0] > 'a' && Username.Text.ToLower()[0] < 'z') args.IsValid = true;
-        else args.IsValid = false;
+        if (Username.Text.ToLower()[0] >= 'a' && Username.Text.ToLower()[0] <= 'z') 
+            args.IsValid = true;
 
         String specialcase = "~!@#$%^&*()_+{}[]\\|;':\"<>,./?";
         foreach(char c in specialcase)
