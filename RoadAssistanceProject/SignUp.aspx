@@ -10,10 +10,13 @@
             max-width: 35%;
             margin: 0 auto;
         }
+        .pad-top {
+            padding-top: 20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="container max-width-center">
+    <div class="container max-width-center pad-top">
         <h1 class="text-center"> Sign Up</h1>
         <!--Profile Picture-->
         <div class="form-group">

@@ -6,7 +6,9 @@
             max-width: 60%;
             margin: 0 auto;
         }
-
+        .pad-top {
+            padding-top: 20px;
+        }
     </style>
 
 
@@ -14,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-        <div class ="text-center container">
+        <div class ="text-center container pad-top">
             <h1><b>Services</b></h1>
             <p><b>With Roadside Assistance, no matter what issue you come across driving on the road, our team of highly trained 
                        mechanics are more than willingly to come to you and provide 

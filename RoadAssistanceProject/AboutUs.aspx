@@ -6,12 +6,15 @@
             max-width: 60%;
             margin: 0 auto;
         }
+        .pad-top {
+            padding-top: 20px;
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <div class="text-center">
+    <div class="text-center pad-top">
         <h1>About Us</h1>
         <hr class="max-width-center" />
         <br />
