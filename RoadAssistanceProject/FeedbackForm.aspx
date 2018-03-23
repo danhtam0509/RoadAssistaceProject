@@ -50,7 +50,7 @@
 					    </div>
                     </div>
                     <div class="form-group ">
-						<label for="choices">Add comments about the support that you received (optional) ?</label>
+						<label for="choices">Add comments about the services that you received? (optional)</label>
 						<asp:TextBox ID="txtComment" class="form-control" runat="server" TextMode="MultiLine" Height="100px" ></asp:TextBox>
                     </div>
                     <asp:Button ID="btnSend" class="btn btn-primary btn-sm" runat="server" Text="Send Message" OnClick="btnSend_Click" />
