@@ -31,21 +31,21 @@
       <div class="collapse navbar-collapse bg-black text-center" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="Home.aspx"> <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+            <a ID="Home" class="nav-link" href="Home.aspx" runat="server"> <i class="fa fa-home"></i> Home </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Services.aspx" runat="server"> <i class="fa fa-globe"></i> Services </a>
+            <a ID="Services" class="nav-link" href="~/Services.aspx" runat="server"> <i class="fa fa-globe"></i> Services </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/FeedbackForm.aspx" runat="server"> <i class="fa fa-comments"></i> Feedback Form </a>
+            <a ID="Feedback" class="nav-link" href="~/FeedbackForm.aspx" runat="server"> <i class="fa fa-comments"></i> Feedback Form </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/AboutUs.aspx" runat="server"> <i class="fa fa-envelope-square"></i> About us </a>
+            <a ID="AboutUs" class="nav-link" href="~/AboutUs.aspx" runat="server"> <i class="fa fa-envelope-square"></i> About us </a>
           </li>
         </ul>
           <ul class="navbar-nav mr-sm-2">
-              <li class="nav-item"><a class="nav-link" href="~/SignUp.aspx" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li class="nav-item"><a class="nav-link" href="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li class="nav-item"><a ID="SignUp" class="nav-link" href="~/SignUp.aspx" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li class="nav-item"><a ID="LogIn"  class="nav-link" href="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
          </ul>
 
       </div>
@@ -70,15 +70,14 @@
                     <ul>
                         <li><a href="Home.aspx">Home</a></li>
                         <li><a href="Services.aspx">Services</a></li>
-                        <li><a href="ViewProfile.aspx">View Profile</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>About us</h5>
                     <ul>
                         <li><a href="AboutUs.aspx">Company Information</a></li>
-                        <li><a href="ContactUs.aspx">Contact us</a></li>
                         <li><a href="FeedbackForm.aspx">Feedback Form</a></li>
+                        <li><a href="AboutUs.aspx">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -86,7 +85,6 @@
                     <ul>
                         <li><a href="SignUp.aspx">Sign up</a></li>
                         <li><a href="LogIn.aspx">Sign in</a></li>
-                        <li><a href="#">Forget Password</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
