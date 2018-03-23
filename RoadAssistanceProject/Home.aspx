@@ -65,7 +65,8 @@
                 <p class="font-weight-bold"> Maintenance</p>
                 <img class="center-block" alt="maintenance_image" src="Images/maintenance.jpg" />
             </div>
-            <div class="w-100"></div>
+        </div> 
+       <div class="row">
             <div class="col-sm text-center">
                 <p class="font-weight-bold"> Lock Out</p>
                 <img class="center-block" alt="lockout_image" src="Images/lockout.jpg" />
@@ -75,11 +76,11 @@
                 <img class="center-block" alt="toToGarage_image" src="Images/tow_to_garage.jpg" />
             </div>
             <div class="col-sm text-center">
-
+                <p class="font-weight-bold"> Consult </p>
+                <img class="center-block" alt="toToGarage_image" src="Images/customer_service.jpg" />
             </div>
-      </div>
 
-     
-   </div>
+      </div>
+    </div>
 </asp:Content>
 

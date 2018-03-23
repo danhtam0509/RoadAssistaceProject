@@ -3,12 +3,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" href="Content/LoginSuccessStyleSheet.css">
     <style>
+        .middle {
+            padding: 100px 30%;
 
+        }
+        img {
+            height: 180px;
+        }
+        .pad-top {
+            padding-top: 50px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="ra">
-        <h1 style="color:forestgreen;">Access Granted</h1>
+ 
+    <div class="container">
+            <div class="middle">
+                <h1> Welcome, Tam</h1>
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="Images/User_Avatar.png" />
+                    </div>
+                    <div class="col-sm pad-top">
+                        <p> <b> You're logged in as Tam</b></p>
+                        <p> <b> <a href="Home.aspx"> <i class="fa fa-backward"></i>  Back to Home Page</a></b></p>
+                    </div>
+                </div>
+            </div>
+            
     </div>
 
 </asp:Content>
