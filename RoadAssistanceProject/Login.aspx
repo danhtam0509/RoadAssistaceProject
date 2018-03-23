@@ -24,9 +24,9 @@
         <div class="form-group">
             <label for="Username" class="control-label"><b>Username:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Username"></asp:TextBox>
-                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Username"></asp:RequiredFieldValidator>
-                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Username must be all letters and numbers and begin with a letter" Display="Dynamic" ControlToValidate="Username" OnServerValidate="username_Validate"></asp:CustomValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtUsername"></asp:TextBox>
+                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Username must be all letters and numbers and begin with a letter" Display="Dynamic" ControlToValidate="txtUsername" OnServerValidate="username_Validate"></asp:CustomValidator>
             </div>
         </div>
         <!--Password-->
@@ -40,7 +40,7 @@
         </div>
         <!--Submit-->
         <br>
-        <asp:Button runat="server" Text="Login" CssClass="btn btn-primary" OnClick="Submit"></asp:Button>
+        <asp:Button runat="server" Text="Login" CssClass="btn btn-primary" OnClick="Unnamed5_Click"></asp:Button>
         <div class="text-center">
             <!--Forget Password-->
             <a href="#">Forget Password</a><br>
