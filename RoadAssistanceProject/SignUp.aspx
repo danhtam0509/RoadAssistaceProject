@@ -42,7 +42,7 @@
         <div class="form-group">
             <label for="Email" class="control-label"><b>Email:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Email"></asp:TextBox>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Email" TextMode="Email"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Email" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="Password" class="control-label"><b>Password:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Password"></asp:TextBox>
+                <asp:TextBox TextMode="Password" Width="400px" runat="server" CssClass="form-control" ID="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Password" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
