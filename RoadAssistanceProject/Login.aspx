@@ -16,6 +16,10 @@
 
     <div class="text-center pad-top">
         <h1>Sign In</h1>
+        <div class="text-center">
+            <!--Create new user-->
+            <a href="SignUp.aspx">Don't have an account? Register</a><br>
+        </div>
         <hr class="max-width-center" />
         <br />
     </div>
@@ -40,13 +44,8 @@
         </div>
         <!--Submit-->
         <br>
-        <asp:Button runat="server" Text="Login" CssClass="btn btn-primary" OnClick="Unnamed5_Click"></asp:Button>
-        <div class="text-center">
-            <!--Forget Password-->
-            <a href="#">Forget Password</a><br>
-            <!--Create new user-->
-            <a href="SignUp.aspx">Create new user</a><br>
-        </div>
+        <asp:Button runat="server" Text="Login" CssClass="btn btn-primary" OnClick="btnLogin_Click" ID="btnLogin"></asp:Button>
+        
     </div>
 </asp:Content>
 

@@ -25,20 +25,12 @@
                 <asp:FileUpload ID="FileUploadControl" runat="server" CssClass="img-thumbnail"></asp:FileUpload>
             </div>
         </div>
-        <!--First Name-->
+        <!--User Name-->
         <div class="form-group">
-            <label for="FirstName" class="control-label"><b>First Name:</b></label>
+            <label for="UserName" class="control-label"><b>User Name:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="FirstName"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="FirstName" ForeColor="Red"></asp:RequiredFieldValidator>
-            </div>
-        </div>
-        <!--Last Name-->
-        <div class="form-group">
-            <label for="LastName" class="control-label"><b>Last Name:</b></label>
-            <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="LastName"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="LastName" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="UserName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="UserName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Email-->
@@ -58,10 +50,10 @@
             </div>
         </div>
         <!--Terms of Services and Email receive agreement-->
-        <asp:CheckBox  runat="server" Text="I agree with the" TextAlign="Right"></asp:CheckBox><a href="TermOfService.txt"> terms of service</a><br>
+        <asp:CheckBox  runat="server" Text="I agree with the terms of service" TextAlign="Right"></asp:CheckBox><br>
         <asp:CheckBox  runat="server" Text="I agree to receive email regarding promotions and offers" TextAlign="Right"></asp:CheckBox><br>
         <!--Button Area-->
-        <asp:Button runat="server" Text="Create Account" CssClass="btn btn-primary"></asp:Button>
+        <asp:Button runat="server" Text="Create Account" CssClass="btn btn-primary" ID="btnCreate" OnClick="btnCreate_Click"></asp:Button>
         <asp:Button runat="server" Text="Cancel" CssClass="btn btn-default" OnClick="Cancel" CausesValidation="false"></asp:Button>
 
     </div>

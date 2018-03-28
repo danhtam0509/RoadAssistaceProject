@@ -15,7 +15,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
+        <!--Some web services-->
         <div class ="text-center container pad-top">
             <h1><b>Services</b></h1>
             <p><b>With Roadside Assistance, no matter what issue you come across driving on the road, our team of highly trained 
@@ -27,7 +27,7 @@
         </div>
         <hr> 
         <br/> 
-
+        <!--Refuel services-->
         <div class="container">
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Refuel</b></h4>
@@ -41,7 +41,7 @@
 
                 <hr class="max-width-center">
                 <br />
-
+                <!--Diagnostic services-->
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Diagnostic</b></h4>
                     <p>Sometimes as drivers we don’t know what the problem is, just that there is a problem and our cars not 
@@ -53,7 +53,7 @@
 
                 <hr class="max-width-center">
                 <br />
-
+                <!--Tire Change/Maintenance services-->
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Tire Change/Maintenance</b></h4>
                     <p>Changing a Tire or repairing a popped wheel can be a simple and quick job that not everyone knows how 
@@ -65,7 +65,7 @@
 
                 <hr class="max-width-center">
                 <br />
-
+             <!--Locked out services-->
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Locked out</b></h4>
                     <p>When you lose track of your keys or leave them in the vehicle a technician will come by and safely open 
@@ -77,6 +77,7 @@
                 <hr class="max-width-center">
                 <br />
 
+                <!--Tow to Garage/House services-->
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Tow to Garage/House</b></h4>
                     <p>When all else fails and your vehicle is immovable or some more serious equipment is required. We are
@@ -87,6 +88,7 @@
     
                 <hr class="max-width-center">            
                 <br />
+                <!--External link to Facebook Fanpage-->
                 <div class="max-width-center" >
                     <h4 class="text-center font-weight-bold font"><b>Events and Rewards </b></h4>
                     <p> Follow us on <a href="https://www.facebook.com/Roadside-Assitance-2049248625399156/"> Facebook </a>

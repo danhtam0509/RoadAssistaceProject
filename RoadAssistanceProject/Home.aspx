@@ -35,6 +35,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div>
         <div class="col banner"> 
+                <!--Web Introduction-->
             <div class="inner"> 
                 <h1> Road Assistance: </h1> 
                 <br /> 
@@ -46,6 +47,7 @@
             </div>    
         </div>
   </div>
+    <!--Some web services-->
    <div class="container w-75 min-height-content section">
        <div class="row text-center">
             <h3 class="center-block"> SERVICES </h3>

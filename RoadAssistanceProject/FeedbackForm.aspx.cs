@@ -14,11 +14,8 @@ public partial class FeedbackForm : System.Web.UI.Page
     
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
     {
-        if (chkYes.Checked == false && chkNo.Checked == false)
-        {
-            args.IsValid = false;
-        }
-        else if (chkYes.Checked == true && chkNo.Checked == true)
+       
+        if(rdYes.Checked==false && rdNo.Checked == false)
         {
             args.IsValid = false;
         }

@@ -2,20 +2,37 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
      <style>
-        .max-width-center {
-            max-width: 30%;
-            margin: 0 auto;
+        .middle {
+            padding: 100px 30%;
+
         }
-        h1 {
-            color: forestgreen;
+        img {
+            height: 180px;
         }
+        .pad-top {
+            padding-top: 50px;
+        }
+         .auto-style1 {
+             width: 365px;
+         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="text-center">
-        <h1>Your Account has been successfully created!</h1>
-        <hr class="max-width-center" />
-        <br />
+    <!--Create Account Success -->
+    <div class="container">
+            <div class="middle">
+                <h1 class="auto-style1"> Welcome, 
+                    <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                    </h1>
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="Images/User_Avatar.png" />
+                    </div>
+                    <div class="col-sm pad-top"><p><b>Your account is created</b></p>
+                        <p> <b> <a href="Home.aspx"> <i class="fa fa-backward"></i>  Back to Home Page</a></b></p>
+                    </div>
+                </div>
+            </div>            
     </div>
 </asp:Content>
 

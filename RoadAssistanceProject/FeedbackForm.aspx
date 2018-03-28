@@ -1,61 +1,63 @@
 <%@ Page Title="Feedback Form Page" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="FeedbackForm.aspx.cs" Inherits="FeedbackForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-        <style>
-            .container1 {
-                padding-right: 20%;
+         <style>
+        .container1{
+            padding-right: 20%;
                 padding-left: 20%;
                 margin-right: auto;
                 margin-left: auto;
-                padding-top: 20px;
-            }
-            .row1{
+                padding-top: 40px;
+        }
+        .row1{
                 padding-left: 20%;
-            }
-	    #contact {
-                background: #333333;
-                color: #f4f4f4;
-                padding-bottom: 10px;
+        }
+        #contact {
+                padding-bottom: 40px;
                 padding-top: 20px;
-            }
-        </style>
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <section id="contact" class="content-section text-center">
+    <!--Feedback form-->
+   <section id="contact" class="content-section text-center">
         <div class="contact-section">
             <div class="container1">
-              <h2>Feedback Form</h2>
+              <h1>Feedback Form</h1>
               <p>Feel free to show us by filing the feeback form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row1">
                 <div class="col-md-8 col-md-offset-2 form-horizontal">
-                  
+                    <!--Enter full name -->
                     <div class="form-group">
-						<label for="form_name">Please enter your full name</label>
-						<asp:TextBox ID="txtName" class="form-control" runat="server"></asp:TextBox>
+						<label for="full_name" class="control-label"><b>Please enter your full name</b></label>
+						<asp:TextBox ID="txtName" CssClass="form-control" runat="server"></asp:TextBox>
 						<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName" Display="Dynamic" ErrorMessage="Full name is required" ForeColor="Red"></asp:RequiredFieldValidator>
 					
                     </div>
+                    <!--Enter email -->
                     <div class="form-group">
-						<label for="email">Please enter your e-mail</label>
-						<asp:TextBox ID="txtEmail" class="form-control" runat="server"></asp:TextBox>
+						<label for="email" class="control-label"><b>Please enter your e-mail</b></label>
+						<asp:TextBox ID="txtEmail" CssClass="form-control" runat="server"></asp:TextBox>
 						<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red"></asp:RequiredFieldValidator>
 					</div>
+                    <!--Satisfaction selection -->
 					<div class="form-group">
-						<label for="choices">Are you satisfied with the service today?</label>
+						<label for="choices" class="control-label"><b>Are you satisfied with the service today?</b></label>
                         <div>
-						<asp:CheckBox ID="chkYes" runat="server" Text="Yes, I'm satisfied" />
-						<asp:CheckBox ID="chkNo" runat="server" Text="No, I'm not satisfied" />
+						    <asp:RadioButton ID="rdYes" runat="server" GroupName="Choice" Text="Yes, I'm satisfied" />
+&nbsp;<asp:RadioButton ID="rdNo" runat="server" GroupName="Choice" Text="No, I'm not satisfied" />
 						    <br />
 						<asp:CustomValidator ID="CustomValidator1" runat="server" Display="Dynamic" ErrorMessage="You have to choose one option" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ></asp:CustomValidator>
 					    </div>
                     </div>
+                    <!--Add comments -->
                     <div class="form-group ">
-						<label for="choices">Add comments about the services that you received? (optional)</label>
-						<asp:TextBox ID="txtComment" class="form-control" runat="server" TextMode="MultiLine" Height="100px" ></asp:TextBox>
+						<label for="choices" class="control-label"><b>Add comments about the services that you received? (optional)</b></label>
+						<asp:TextBox ID="txtComment" CssClass="form-control" runat="server" TextMode="MultiLine" Height="100px" ></asp:TextBox>
                     </div>
-                    <asp:Button ID="btnSend" class="btn btn-primary btn-sm" runat="server" Text="Send Message" OnClick="btnSend_Click" />
-                  
-                </div>
+                    <!--Send to Feedback Confirm page -->
+                    <asp:Button ID="btnSend" CssClass="btn btn-primary" runat="server" Text="Send Message" OnClick="btnSend_Click" />
+                  </div>
               </div>
             </div>
         </div>
