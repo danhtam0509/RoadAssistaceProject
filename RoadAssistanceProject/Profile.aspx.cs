@@ -11,4 +11,10 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void btnEdit_Click(object sender, EventArgs e)
+    {
+        if (IsValid)
+            Server.Transfer("EditProfile.aspx");
+    }
 }
