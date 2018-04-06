@@ -33,6 +33,30 @@
                 <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="UserName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
+        <!--First Name-->
+        <div class="form-group">
+            <label for="FirstName" class="control-label"><b>First Name:</b></label>
+            <div>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="FirstName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="FirstName" ForeColor="Red"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+        <!--Last Name-->
+        <div class="form-group">
+            <label for="LastName" class="control-label"><b>Last Name:</b></label>
+            <div>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="LastName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="LastName" ForeColor="Red"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+        <!-- Address -->
+        <div class="form-group">
+            <label for="Address" class="control-label"><b> Address:</b></label>
+            <div>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Address"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Address" ForeColor="Red"></asp:RequiredFieldValidator>
+            </div>
+        </div>
         <!--Email-->
         <div class="form-group">
             <label for="Email" class="control-label"><b>Email:</b></label>

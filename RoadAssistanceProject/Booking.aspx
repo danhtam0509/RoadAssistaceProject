@@ -1,61 +1,86 @@
-﻿<%@ Page Title ="Booking" Language="C#" AutoEventWireup="true" MasterPageFile="~/Default.master" CodeFile="Booking.aspx.cs" Inherits="Booking" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="Booking.aspx.cs" Inherits="_Default" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style>
+        .max-width-center {
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        .max-width-center-button {
+            max-width: 30%;
+            margin: 0 auto;
+        }
+        .pad-top {
+            padding-top: 20px;
+        }
+        .label-width {
+            width: 10em;
+        }
+        .txt-inline {
+            display: inline-block;
+        }
+        .container {
+            min-height: 500px;
+        }
 
-<asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
-    <div id="Header">
-        <br />
-        <h3><center>Please fill out the Form</center></h3>
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="text-center pad-top">
+        <h1>Booking Service</h1>
+        <p> Fill out this form to add your booking </p>
+        <hr class="max-width-center" />
         <br />
     </div>
+    <!-- Form for booking service -->
+    <div class="container"> 
+        <div class="max-width-center"> 
+            <!-- Service Name --> 
+            <div class="form-group">
+                <label for="btnServiceName" class="control-label label-width"><b>Service Name:</b></label>         
+                <asp:Label Width="400px" runat="server" CssClass="" ID="btnServiceName" Text="lblServiceName" ></asp:Label>
+            </div>
+            <!-- Car Model -->
+            <div class="form-group">
+                <label for="CarModel" class="control-label label-width"><b>Car Model:</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="CarModel" placeholder="Ex: Chevy Sonic"></asp:TextBox>
+            </div>
+            <!-- Insurance Number -->            
+            <div class="form-group">
+                <label for="txtInsuranceNumber" class="control-label label-width"><b>Insurance Number:</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="txtInsuranceNumber" placeholder="Ex: ########"></asp:TextBox>
+            </div>
+            <!-- License Number -->            
+            <div class="form-group">
+                <label for="txtLicenseNumber" class="control-label label-width"><b>License Number:</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="txtLicenseNumber" placeholder="Ex: ########"></asp:TextBox>
+            </div>
+            <!-- Start Date -->            
+            <div class="form-group">
+                <label for="txtStartDate" class="control-label label-width"><b>Start Date:</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="txtStartDate" TextMode="Date"></asp:TextBox>
+            </div>
+            <!-- Finish Date -->            
+            <div class="form-group">
+                <label for="txtFinishDate" class="control-label label-width"><b>Finish Date:</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="txtFinishDate" TextMode="Date"></asp:TextBox>
+            </div>
+            <!-- Description -->
+            <div class="form-group">
+                <label for="txtLicenseNumber" class="control-label label-width"><b>Description</b></label>         
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control txt-inline" ID="TextBox1" TextMode="MultiLine" placeholder="Ex: Describe your problem in detail here"></asp:TextBox>
+            </div>
+            <!-- Submit button -->
+            <div class="text-center">
+               
+                <asp:Button runat="server" Text="Booking" CssClass="btn btn-primary txt-inline" ID="btnBooking"></asp:Button>
+                <asp:Button runat="server" Text="Cancel" CssClass="btn btn-default txt-inline" ID="btnCancel" CausesValidation="false"></asp:Button>
+            </div>           
+        </div>
+            
+    </div>
 
-    <div id="Person_table">
-    <h3><center>Your Info</center></h3>
-        <table style="width:90%; padding: 100px; text-align:right; margin: 0 auto; background-color:cornflowerblue">
-            <tr>
-                <td>
-                    <h4 style="margin: 60px; margin-bottom: 0">First Name: <input type="text" style="width:50%"/></h4>
-                </td>
-                <td>
-                    <h4 style="margin: 60px; margin-bottom: 0">Last Name: <input type="text" style="width:50%"/></h4>
-                   
-                </td>
-            </tr>
-            <tr>
-                <td><h4 style="margin: 60px; margin-bottom:0">Address: <input type="text" style="width:50%"/></h4>
-                    
-                </td>
-                <td>
-                    <h4 style="margin: 60px; margin-bottom: 50px">Insurance Number: <input type="text" style="width:50%"/></h4>
-                </td>
-            </tr>
-            <br />
-            <br />
-            <tr>
-                <td><h4 style="margin-left:0 auto">License Number:  <input type="text" style="width:50%"/></h4>
-                </td>
-                <td style="text-align:center"><h4 style="margin-left:0 auto; text-align:center;">Closest Intersection: </h4>
-                    <input type="text" style="width:45%"/> <h5> and </h5> <input type="text" style="width:45%"/><br /><br />
-                </td>
-            </tr>
-        </table>
-    </div>
-    <br /><br />
-    <h3><center>Your Vehicle's Info</center></h3>
-    <div id="Car_table">
-        <table style="width:75%; padding:100px; text-align:right; margin: 0 auto; background-color: cornflowerblue">
-            <tr>
-                <td><h4 style="margin: 60px; margin-bottom: 0">Make: <input type="text" style="width:50%"/></h4><br />
-                </td>
-                <td style="text-align:left"><h4 style="margin:60px; margin-bottom: 0">Model: <input type="text" style="width:50%"/></h4><br />
-                </td>
-            </tr>
-            <tr>
-                <td><h4 style="margin:60px; margin-bottom:0 ">Plate Number: <input type="text" style="width:50%"/></h4><br /><br />
-                </td>
-                <td style="text-align:left"><h4 style="margin:60px; margin-bottom:0">Engine Size: <input type="text" style="width:35%"/></h4><br /><br /></td>
-            </tr>
-        </table>
-        <br />
-        <center><a href="" class = "btn btn-primary">Submit</a> <a style="margin: 0 auto" href="/Services.aspx" class="btn btn-primary">Cancel</a></center>
-    </div>
- </asp:Content>
+
+</asp:Content>
+

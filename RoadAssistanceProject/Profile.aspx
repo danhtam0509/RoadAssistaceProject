@@ -1,8 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="Profile.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-   
+   <style>
+       .container {
+           min-height: 600px;
+       }
+   </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container">
@@ -42,7 +47,15 @@
                       <tr>
                         <td>Phone Number</td>
                         <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)</td>                           
-                      </tr>                     
+                      </tr> 
+                      <tr>
+                        <td>Insuarance Number</td>
+                        <td> 123-123-123-123</td>                           
+                      </tr> 
+                       <tr>
+                        <td>License Number </td>
+                        <td> 123-123-123-123 </td>                           
+                      </tr> 
                     </tbody>
                   </table>               
                     <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Edit" OnClick="btnEdit_Click"/>
