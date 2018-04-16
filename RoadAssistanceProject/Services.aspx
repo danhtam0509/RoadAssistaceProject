@@ -41,7 +41,7 @@
                         With Roadside Assistance just tell us the make and model of your vehicle and 
                         we will come to you with half or a full tank of gas to send you on your way.
                     </p>
-                    <p class="auto-style1">Rate: $15 + 120¢/ltr <a href="Booking.aspx" class="btn btn-primary"  style="float:right">Book Now</a></p>                   
+                    <p class="auto-style1">Rate: $15 + 120¢/ltr <a href="AuthenticatedPages/Booking.aspx" class="btn btn-primary"  style="float:right">Book Now</a></p>                   
                 </div>
 
                 <hr class="max-width-center">
@@ -53,7 +53,7 @@
                         working. Which is why we have implemented an individual diagnostic service to allow drivers to call in 
                         and find out what that sound or warning light means, and how it effects your vehicle.
                     </p>
-                    <p class="font-weight-bold">Rate: $25/hr <a href="Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
+                    <p class="font-weight-bold">Rate: $25/hr <a href="AuthenticatedPages/Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
                 </div>
 
                 <hr class="max-width-center">
@@ -65,7 +65,7 @@
                         to do. By calling Roadside Assistance we will come to you fully equipped to change or repair a tire and 
                         send you on your way as quick as possible.
                     </p>
-                    <p class="font-weight-bold">Rate: $45 <a href="Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
+                    <p class="font-weight-bold">Rate: $45 <a href="AuthenticatedPages/Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
                 </div>
 
                 <hr class="max-width-center">
@@ -76,7 +76,7 @@
                     <p>When you lose track of your keys or leave them in the vehicle a technician will come by and safely open 
                         your doors and provide access to the vehicle.
                     </p>
-                    <p class="font-weight-bold">Rate: $35 <a href="Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
+                    <p class="font-weight-bold">Rate: $35 <a href="AuthenticatedPages/Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
                 </div>
 
                 <hr class="max-width-center">
@@ -88,7 +88,7 @@
                     <p>When all else fails and your vehicle is immovable or some more serious equipment is required. We are
                     more than happy to provide you and your vehicle with a lift to the closest garage or destination of your choice.
                     </p>
-                    <p class="font-weight-bold">Rate: $10 + $2.00/km <a href="Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
+                    <p class="font-weight-bold">Rate: $10 + $2.00/km <a href="AuthenticatedPages/Booking.aspx" class="btn btn-primary" style="float:right">Book Now</a></p>
                 </div>
     
                 <hr class="max-width-center">            

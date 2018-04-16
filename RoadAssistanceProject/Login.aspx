@@ -16,6 +16,11 @@
 
     <div class="text-center pad-top">
         <h1>Sign In</h1>
+        <!-- Alert Error --> 
+        <div id="AlertFlash" class="alert alert-danger" runat="server" visible="false">
+                <asp:label runat="server" ID="StatusLabel"></asp:label>
+
+        </div>
         <div class="text-center">
             <!--Create new user-->
             <a href="SignUp.aspx">Don't have an account? Register</a><br>
@@ -26,20 +31,20 @@
     <div class="container max-width-center">
         <!--Username-->
         <div class="form-group">
-            <label for="Username" class="control-label"><b>Username:</b></label>
+            <label for="txtUserName" class="control-label"><b>Username:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtUsername"></asp:TextBox>
-                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
-                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Username must be all letters and numbers and begin with a letter" Display="Dynamic" ControlToValidate="txtUsername" OnServerValidate="username_Validate"></asp:CustomValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtUserName"></asp:TextBox>
+                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtUserName"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Username must be all letters and numbers and begin with a letter" Display="Dynamic" ControlToValidate="txtUserName" OnServerValidate="username_Validate"></asp:CustomValidator>
             </div>
         </div>
         <!--Password-->
         <div class="form-group">
-            <label for="Password" class="control-label"><b>Password:</b></label>
+            <label for="txtPassword" class="control-label"><b>Password:</b></label>
             <div>
-                <asp:TextBox TextMode="Password" Width="400px" runat="server" CssClass="form-control" ID="Password"></asp:TextBox>
-                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Password"></asp:RequiredFieldValidator>
-                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Password must be 8 to 16 characters long, start with a letter and contain at least one ! Or * and digit in it" Display="Dynamic" ControlToValidate="Password" OnServerValidate="password_Validate"></asp:CustomValidator>            
+                <asp:TextBox TextMode="Password" Width="400px" runat="server" CssClass="form-control" ID="txtPassword"></asp:TextBox>
+                <asp:RequiredFieldValidator ForeColor="Red" runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ForeColor="Red" runat="server" ErrorMessage="Password must be 8 to 16 characters long, start with a letter and contain at least one ! Or * and digit in it" Display="Dynamic" ControlToValidate="txtPassword" OnServerValidate="password_Validate"></asp:CustomValidator>            
             </div>
         </div>
         <!--Submit-->
