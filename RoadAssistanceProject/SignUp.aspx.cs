@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Web.Security;
 
-// required for Identity and OWIN Security
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin.Security;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -25,6 +24,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCreate_Click(object sender, EventArgs e)
     {
+        /*
         // create new userStore and userManager objects
         var userStore = new UserStore<IdentityUser>();
         var userManager = new UserManager<IdentityUser>(userStore);
@@ -58,5 +58,7 @@ public partial class _Default : System.Web.UI.Page
             StatusLabel.Text = result.Errors.FirstOrDefault();
             AlertFlash.Visible = true;
         }
+        */
+        
     }
 }

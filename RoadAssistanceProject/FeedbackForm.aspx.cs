@@ -11,7 +11,7 @@ public partial class FeedbackForm : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
     
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
@@ -30,7 +30,7 @@ public partial class FeedbackForm : System.Web.UI.Page
         var date = DateTime.Now.ToString("mm/dd/yyyy");
         if (IsPostBack)
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RoadConnectionString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
             string postFB = "INSERT INTO Feedback(comment, rating, date) VALUES('" + cmt + "', '" + rating + "', '" + date + "')";
             SqlCommand comd = new SqlCommand(postFB, conn);
@@ -39,5 +39,4 @@ public partial class FeedbackForm : System.Web.UI.Page
             Response.Redirect("~/FBConfirm.aspx");
         }
     }
-
 }
