@@ -17,6 +17,8 @@
                 padding-top: 20px;
         }
     </style>
+    <link href="Content/5star.css" rel="stylesheet" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <!--Feedback form-->
@@ -50,6 +52,19 @@
 						<asp:CustomValidator ID="CustomValidator1" runat="server" Display="Dynamic" ErrorMessage="You have to choose one option" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ></asp:CustomValidator>
 					    </div>
                     </div>
+
+                    <!--Rating-->
+                    <div class="form-group ">
+						<label for="rating" class="control-label"><b>Rating</b></label><br />              
+                        <asp:RadioButtonList CssClass="rate-area" ID="rdRating" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                            <asp:ListItem Value="5"></asp:ListItem>
+                            <asp:ListItem Value="4"></asp:ListItem>
+                            <asp:ListItem Value="3"></asp:ListItem>
+                            <asp:ListItem Value="2"></asp:ListItem>
+                            <asp:ListItem Value="1"></asp:ListItem>
+                        </asp:RadioButtonList>                        
+                    </div>
+
                     <!--Add comments -->
                     <div class="form-group ">
 						<label for="choices" class="control-label"><b>Add comments about the services that you received? (optional)</b></label>
