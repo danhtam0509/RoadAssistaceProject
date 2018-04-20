@@ -45,16 +45,16 @@
         </ul>
           <ul class="navbar-nav mr-sm-2">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="~/AuthenticatedPages/Profile.aspx" ID="ProfileDropdown" runat="server" role="button" data-toggle="dropdown"> Profile </a>
+                <a class="nav-link dropdown-toggle" href="#" ID="ProfileDropdown" runat="server" role="button" data-toggle="dropdown"> Profile </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a ID="ProfileLink" class="dropdown-item" href="~/AuthenticatedPages/Profile.aspx" runat="server">View Profile</a>                    
                       <a ID="AddCar" class="dropdown-item" href="~/AuthenticatedPages/AddCar.aspx" runat="server">Add Car</a>
                       <a ID="ReportAdmin" class="dropdown-item" href="~/AuthenticatedPages/ReportAdmin.aspx" runat="server"> Admin Report </a>
+                      <a ID="LogOut" class="dropdown-item" runat="server" href="~/Logout.aspx">Logout</a> 
                     </div>
               </li>  
               <li class="nav-item"><a ID="SignUp" class="nav-link" href="~/SignUp.aspx" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li class="nav-item"><a ID="LogIn"  class="nav-link" href="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <li class="nav-item"><a ID="LogOut" visible="false" class="nav-link" href="#" runat="server" onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>         
+              <li class="nav-item"><a ID="LogIn"  class="nav-link" href="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>        
           </ul>
 
       </div>

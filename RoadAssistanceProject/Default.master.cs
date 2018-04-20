@@ -15,13 +15,14 @@ public partial class _Default : System.Web.UI.MasterPage
         {
             SignUp.Visible = false;
             LogIn.Visible = false;
-            LogOut.Visible = true;
+            ProfileDropdown.Visible = true;
         }
         else
         {
             SignUp.Visible = true;
             LogIn.Visible = true;
             LogOut.Visible = false;
+            ProfileDropdown.Visible = false;
         }
         setActivePage();
     }
