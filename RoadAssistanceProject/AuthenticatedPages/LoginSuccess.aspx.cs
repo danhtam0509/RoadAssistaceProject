@@ -18,7 +18,7 @@ public partial class _Default : System.Web.UI.Page
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                while(reader.Read())
+                while (reader.Read())
                     lblUsername.Text = reader.GetString(0);
             }
             reader.Close();
