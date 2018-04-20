@@ -14,7 +14,11 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        String session_string = Session["Username"] as string;
+        if (!String.IsNullOrEmpty(session_string))
+        {
+            Response.Redirect("~/Home.aspx");
+        }
     }
 
     protected void Cancel(object sender, EventArgs e)

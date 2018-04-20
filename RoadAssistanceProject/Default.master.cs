@@ -10,6 +10,19 @@ public partial class _Default : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        String session_string = Session["Username"] as string;
+        if (!String.IsNullOrEmpty(session_string))
+        {
+            SignUp.Visible = false;
+            LogIn.Visible = false;
+            LogOut.Visible = true;
+        }
+        else
+        {
+            SignUp.Visible = true;
+            LogIn.Visible = true;
+            LogOut.Visible = false;
+        }
         setActivePage();
     }
 

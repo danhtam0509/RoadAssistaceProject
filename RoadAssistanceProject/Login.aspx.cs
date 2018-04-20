@@ -4,18 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Web.Security;
 
 // required for Identity and OWIN Security
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
-public partial class _Default : System.Web.UI.Page
+public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["Username"] = txtUserName.Text;
-        Session["Expire"] = false;
+        String session_string = Session["Username"] as string;
+        if (!String.IsNullOrEmpty(session_string))
+        {
+            Response.Redirect("~/Home.aspx");
+        }
     }
 
 
@@ -44,6 +50,7 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
+        /*
         // create new userStore and userManager objects
         var userStore = new UserStore<IdentityUser>();
         var userManager = new UserManager<IdentityUser>(userStore);
@@ -69,5 +76,31 @@ public partial class _Default : System.Web.UI.Page
             StatusLabel.Text = "Invalid Username or Password";
             AlertFlash.Visible = true;
         }
+        */
+        
+         
+        var userName = txtUserName.Text;
+        var password = txtPassword.Text;
+ 
+        if (IsPostBack)
+        {        
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            conn.Open();
+            string checkUser = "select username, password from Customer where username='"+userName+"' and password='"+password+"'";
+            SqlCommand comd = new SqlCommand(checkUser, conn);
+            SqlDataReader myReader = comd.ExecuteReader();
+            if (myReader.Read() != false)
+            {
+                Session["Username"] = userName;
+                FormsAuthentication.RedirectFromLoginPage(userName, true);
+                Response.Redirect("~/AuthenticatedPages/LoginSuccess.aspx");
+            }
+            else        
+            {
+                Response.Write(@"<script language='javascript'>alert('Invalid Username or Password.')</script>");
+            }
+            conn.Close();
+        }
+        
     }
 }
