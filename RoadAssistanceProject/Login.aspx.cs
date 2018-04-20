@@ -8,10 +8,6 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Security;
 
-// required for Identity and OWIN Security
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin.Security;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -49,36 +45,7 @@ public partial class Login : System.Web.UI.Page
 
     }
     protected void btnLogin_Click(object sender, EventArgs e)
-    {
-        /*
-        // create new userStore and userManager objects
-        var userStore = new UserStore<IdentityUser>();
-        var userManager = new UserManager<IdentityUser>(userStore);
-
-        // search for and create a new user object 
-        var user = userManager.Find(txtUserName.Text, txtPassword.Text);
-
-        // if a match is found for the user...
-        if (user != null)
-        {
-            // authenticate and login our user 
-            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-            var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-
-            // sign in the user 
-            authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-
-            // redirect the user 
-            Response.Redirect("~/AuthenticatedPages/LoginSuccess.aspx");
-        }
-        else // no match was found
-        {
-            StatusLabel.Text = "Invalid Username or Password";
-            AlertFlash.Visible = true;
-        }
-        */
-        
-         
+    {        
         var userName = txtUserName.Text;
         var password = txtPassword.Text;
  
@@ -92,7 +59,14 @@ public partial class Login : System.Web.UI.Page
             if (myReader.Read() != false)
             {
                 Session["Username"] = userName;
+                string us = (string) myReader["Username"];
                 FormsAuthentication.RedirectFromLoginPage(userName, true);
+                
+                if ( us == "haobui1994")
+                {
+                    Response.Redirect("~/Admin/AdminPage.aspx");
+
+                }
                 Response.Redirect("~/AuthenticatedPages/LoginSuccess.aspx");
             }
             else        
