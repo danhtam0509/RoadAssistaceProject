@@ -74,7 +74,7 @@
             <!-- Submit button -->
             <div class="text-center">
                
-                <asp:Button runat="server" Text="Booking" CssClass="btn btn-primary txt-inline" ID="btnBooking"></asp:Button>
+                <asp:Button runat="server" Text="Booking" CssClass="btn btn-primary txt-inline" ID="btnBooking" OnClick="btnBooking_Click"></asp:Button>
                 <asp:Button runat="server" Text="Cancel" CssClass="btn btn-default txt-inline" ID="btnCancel" CausesValidation="false"></asp:Button>
             </div>           
         </div>

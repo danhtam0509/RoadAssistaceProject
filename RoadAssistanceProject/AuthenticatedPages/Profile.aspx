@@ -5,18 +5,29 @@
        .container {
            min-height: 600px;
        }
+        .max-width-center {
+            max-width: 35%;
+            margin: 0 auto;
+        }
+        .pad-top {
+            padding-top: 20px;
+        }
+        img {
+            height: 200px;
+        }
    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container">
-              <hr>
+        <div class="max-width-center pad-top">
+            <h1 class="text-center"> Profile</h1>
+        </div>
               <div class="row">     
                   <div class="col-md-3">
                     <div class="text-center">
-                      <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                      <h6>Upload a different photo...</h6>
+                      <img src="../Images/User_Avatar.png" class="avatar img-circle" alt="avatar">
           
                       <input type="file" class="form-control">
                     </div>
@@ -26,35 +37,35 @@
                     <tbody>
                       <tr>
                         <td>Name:</td>
-                        <td>John Doe</td>
+                        <td> <asp:Label ID="lblName" runat="server"></asp:Label></td>
                       </tr>                      
                       <tr>
                         <td>Date of Birth</td>
-                        <td>01/24/1988</td>
+                        <td> <asp:Label ID="lblDoB" runat="server"></asp:Label> </td>
                       </tr>                   
                       <tr>
                         <td>Gender</td>
-                        <td>Male</td>
+                        <td> <asp:Label ID="lblGender" runat="server"></asp:Label> </td>
                       </tr>
                       <tr>
                         <td>Home Address</td>
-                        <td>Toronto, ON</td>
+                        <td> <asp:Label ID="lblAddress" runat="server"></asp:Label> </td>
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td><a href="mailto:johndoe@support.com">johndoe@support.com</a></td>                      
+                        <td> <asp:Label ID="lblEmail" runat="server"></asp:Label> </td>
                       </tr>
                       <tr>
                         <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)</td>                           
+                        <td> <asp:Label ID="lblPhone" runat="server"></asp:Label> </td>
                       </tr> 
                       <tr>
                         <td>Insuarance Number</td>
-                        <td> 123-123-123-123</td>                           
+                        <td> <asp:Label ID="lblInsurance" runat="server"></asp:Label> </td>
                       </tr> 
                        <tr>
                         <td>License Number </td>
-                        <td> 123-123-123-123 </td>                           
+                        <td> <asp:Label ID="lblLicense" runat="server"></asp:Label> </td>
                       </tr> 
                     </tbody>
                   </table>               

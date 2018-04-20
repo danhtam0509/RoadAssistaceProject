@@ -24,41 +24,43 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCreate_Click(object sender, EventArgs e)
     {
-        /*
-        // create new userStore and userManager objects
-        var userStore = new UserStore<IdentityUser>();
-        var userManager = new UserManager<IdentityUser>(userStore);
-
-        // create a new user object 
-        var user = new IdentityUser()
+        var userName = txtUserName.Text;
+        var firstName = txtFirstName.Text;
+        var lastName = txtLastName.Text;
+        var address = txtAddress.Text;
+        var email = txtEmail.Text;
+        var password = txtPassword.Text;
+        var phone = txtPhone.Text;
+        var date = txtDoB.Text;
+        var gender = rdMale.Checked == true ? 0 : 1;
+        var insurance = txtInsurance.Text;
+        var license = txtLicense.Text;
+        if (IsPostBack)
         {
-            UserName = txtUserName.Text,
-            Email = txtEmail.Text
-        };
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            conn.Open();
 
-        // create a new user in the db and store the results
-        IdentityResult result = userManager.Create(user, txtPassword.Text);
-
-        // check if successfully registered
-        if (result.Succeeded)
-        {
-            // authenticate and login our new user
-            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-            var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-
-            // sign in the user
-            authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
-
-            // Redirect the user
-            Response.Redirect("~/AuthenticatedPages/CreateAccountSuccess.aspx");
+            string checkUser = "select username, password from Customer where username='" + userName + "'";
+            SqlCommand comd = new SqlCommand(checkUser, conn);
+            SqlDataReader myReader = comd.ExecuteReader();
+            if (myReader.Read() != false)
+            {
+                Response.Write(@"<script language='javascript'>alert('Account already exists.')</script>");
+            }
+            else
+            {
+                SqlConnection conn2 = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                conn2.Open();
+                string createAccount = "INSERT INTO Customer(Username, FirstName, LastName, Address, Email, Password, Phone, DoB, Gender, Insurance, License) VALUES('"
+                + userName + "', '" + firstName + "', '" + lastName + "', '" + address + "', '" + email + "', '" + password + "',  '" + phone + "', '" + date + "', '" + gender + "', '" + insurance + "', '" + license + "')";
+                SqlCommand comd2 = new SqlCommand(createAccount, conn2);
+                comd2.ExecuteNonQuery();
+                FormsAuthentication.RedirectFromLoginPage(userName, true);
+                Response.Redirect("~/AuthenticatedPages/CreateAccountSuccess.aspx");
+                conn2.Close();
+            }
+            conn.Close();
         }
-        else
-        {
-            // display error in the AlertFlash
-            StatusLabel.Text = result.Errors.FirstOrDefault();
-            AlertFlash.Visible = true;
-        }
-        */
-        
+
     }
 }
