@@ -4,16 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Web.Security;
 
+// required for Identity and OWIN Security
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 
-public partial class Login : System.Web.UI.Page
+public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["Username"] = txtUserName.Text;
+        Session["Expire"] = false;
     }
 
 
@@ -41,35 +43,31 @@ public partial class Login : System.Web.UI.Page
 
     }
     protected void btnLogin_Click(object sender, EventArgs e)
-    {        
-        var userName = txtUserName.Text;
-        var password = txtPassword.Text;
- 
-        if (IsPostBack)
-        {        
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            conn.Open();
-            string checkUser = "select username, password from Customer where username='"+userName+"' and password='"+password+"'";
-            SqlCommand comd = new SqlCommand(checkUser, conn);
-            SqlDataReader myReader = comd.ExecuteReader();
-            if (myReader.Read() != false)
-            {
-                string us = (string) myReader["Username"];
-                FormsAuthentication.RedirectFromLoginPage(userName, true);
-                
-                if ( us == "haobui1994")
-                {
-                    Response.Redirect("~/Admin/AdminManager.aspx");
+    {
+        // create new userStore and userManager objects
+        var userStore = new UserStore<IdentityUser>();
+        var userManager = new UserManager<IdentityUser>(userStore);
 
-                }
-                Response.Redirect("~/AuthenticatedPages/LoginSuccess.aspx");
-            }
-            else        
-            {
-                Response.Write(@"<script language='javascript'>alert('Invalid Username or Password.')</script>");
-            }
-            conn.Close();
+        // search for and create a new user object 
+        var user = userManager.Find(txtUserName.Text, txtPassword.Text);
+
+        // if a match is found for the user...
+        if (user != null)
+        {
+            // authenticate and login our user 
+            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+
+            // sign in the user 
+            authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
+
+            // redirect the user 
+            Response.Redirect("~/AuthenticatedPages/LoginSuccess.aspx");
         }
-        
+        else // no match was found
+        {
+            StatusLabel.Text = "Invalid Username or Password";
+            AlertFlash.Visible = true;
+        }
     }
 }

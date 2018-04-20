@@ -22,6 +22,13 @@
         <div id="AlertFlash" class="alert alert-danger" runat="server" visible="false">
                 <asp:Label runat="server" ID="StatusLabel"></asp:Label>
         </div>
+        <!--Profile Picture-->
+        <div class="form-group">
+            <label for="FileUpLoadControl" class="control-label"><b>Profile Picture:</b></label>
+            <div>
+                <asp:FileUpload ID="FileUploadControl" runat="server" CssClass="img-thumbnail"></asp:FileUpload>
+            </div>
+        </div>
         <!--User Name-->
         <div class="form-group">
             <label for="txtUserName" class="control-label"><b>User Name:</b></label>
@@ -35,6 +42,7 @@
             <label for="txtFirstName" class="control-label"><b>First Name:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtFirstName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtFirstName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Last Name-->
@@ -42,6 +50,7 @@
             <label for="txtLastName" class="control-label"><b>Last Name:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtLastName"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtLastName" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!-- Address -->
@@ -49,6 +58,7 @@
             <label for="txtAddress" class="control-label"><b> Address:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtAddress"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtAddress" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Email-->
@@ -56,6 +66,7 @@
             <label for="txtEmail" class="control-label"><b>Email:</b></label>
             <div>
                 <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtEmail" TextMode="Email"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
         <!--Password-->
@@ -66,52 +77,6 @@
                 <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
-
-        <!-- Phone -->
-        <div class="form-group">
-            <label for="txtPhone" class="control-label"><b>Phone:</b></label>
-            <div>
-                <asp:TextBox TextMode="Phone" Width="400px" runat="server" CssClass="form-control" ID="txtPhone"></asp:TextBox>
-            </div>
-        </div>
-
-        <!-- Date of Birth -->
-        <div class="form-group">
-            <label for="txtDoB" class="control-label"><b>Date of Birth:</b></label>
-            <div>
-                <asp:TextBox TextMode="Date" Width="400px" runat="server" CssClass="form-control" ID="txtDoB"></asp:TextBox>
-            </div>
-        </div>
-
-        <!-- Gender -->
-        <div class="form-group">
-			<label class="control-label"><b>Gender: </b></label>
-                <div>
-			        <asp:RadioButton ID="rdMale" runat="server" GroupName="Choice" Text="Male" Checked="true" />
-                                &nbsp;
-                    <asp:RadioButton ID="rdFemale" runat="server" GroupName="Choice" Text="Female" />
-						    <br />
-		        </div>
-        </div>
-
-        <!-- Insurance -->
-        <div class="form-group">
-            <label for="txtInsurance" class="control-label"><b>Insurance:</b></label>
-            <div>
-                <asp:TextBox TextMode="Number" Width="400px" runat="server" CssClass="form-control" ID="txtInsurance"></asp:TextBox>
-            </div>
-        </div>
-
-        <!-- License -->
-        <div class="form-group">
-            <label for="txtLicense" class="control-label"><b>License:</b></label>
-            <div>
-                <asp:TextBox TextMode="Number" Width="400px" runat="server" CssClass="form-control" ID="txtLicense"></asp:TextBox>
-            </div>
-        </div>
-
-            
-
         <!--Terms of Services and Email receive agreement-->
         <asp:CheckBox  runat="server" Text="I agree with the terms of service" TextAlign="Right"></asp:CheckBox><br>
         <asp:CheckBox  runat="server" Text="I agree to receive email regarding promotions and offers" TextAlign="Right"></asp:CheckBox><br>
