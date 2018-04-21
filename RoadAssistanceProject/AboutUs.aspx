@@ -51,7 +51,7 @@
                 <li class="text-center">
                     <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-target="#demo_4">Tam Dang</button>
                     <div id="demo_4" class="collapse">
-                    <b>I’m second year student studying Computer Programming at GBC. I made the MasterPage, HomePage. I enjoy playing badminton, soccer, volleyball and listening to music.</b>
+                    <b>I’m a second year student studying Computer Programming at GBC. I made the MasterPage, HomePage. I enjoy playing badminton, soccer, volleyball and listening to music.</b>
                     </div>
                 </li>
             </ul>
