@@ -9,8 +9,6 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        lblUserName.Text = "" + Session["UserName"];
-        Session["Expire"] = true;
-        Session.Clear();
+        lblUserName.Text = (string) Session["Username"];
     }
 }
