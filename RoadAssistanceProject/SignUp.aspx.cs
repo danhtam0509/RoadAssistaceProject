@@ -28,12 +28,12 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCreate_Click(object sender, EventArgs e)
     {
-        var userName = txtUserName.Text;
+        var userName = txtUserName.Text.ToLower();
         var firstName = txtFirstName.Text;
         var lastName = txtLastName.Text;
         var address = txtAddress.Text;
         var email = txtEmail.Text;
-        var password = txtPassword.Text;
+        var password = txtPassword.Text.ToLower().GetHashCode();
         var phone = txtPhone.Text;
         var date = txtDoB.Text;
         var gender = rdMale.Checked == true ? 0 : 1;
@@ -60,9 +60,20 @@ public partial class _Default : System.Web.UI.Page
                 SqlCommand comd2 = new SqlCommand(createAccount, conn2);
                 comd2.ExecuteNonQuery();
                 FormsAuthentication.RedirectFromLoginPage(userName, true);
+                Session["Username"] = userName;
+                conn2.Close();
+
+                conn2.Open();
+                string getID = "select customerid from Customer where username='" + userName + "'";
+                SqlCommand comd3 = new SqlCommand(getID, conn2);
+                SqlDataReader myReader1 = comd3.ExecuteReader();
+                if (myReader1.Read() != false)
+                    Session["UserID"] = myReader1["CustomerID"];
                 Response.Redirect("~/AuthenticatedPages/CreateAccountSuccess.aspx");
                 conn2.Close();
             }
+            
+
             conn.Close();
         }
 
