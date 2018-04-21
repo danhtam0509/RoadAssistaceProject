@@ -15,9 +15,14 @@ public partial class _Default : System.Web.UI.MasterPage
         {
             if (session_string == "haobui1994")
                 ReportAdmin.Visible = true;
+            else
+            {
+                AddCar.Visible = true;
+            }
             SignUp.Visible = false;
             LogIn.Visible = false;
             ProfileDropdown.Visible = true;
+            
         }
         else
         {
