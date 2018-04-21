@@ -38,15 +38,24 @@
                     <tbody>
                       <tr>
                         <td>Name:</td>
-                        <td> <asp:TextBox runat="server" ID="Name"  CssClass="form-control"></asp:TextBox></td>
+                        <td> <asp:TextBox runat="server" ID="Name"  CssClass="form-control"></asp:TextBox>
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" runat="server" ErrorMessage="This Field is required" ControlToValidate="Name"></asp:RequiredFieldValidator>
+                        </td>
                       </tr>                      
                       <tr>
                         <td>Date of Birth</td>
-                        <td> <asp:TextBox runat="server" ID="DOB" CssClass="form-control"></asp:TextBox> </td>
+                        <td> <asp:TextBox TextMode="Date" runat="server" ID="DOB" CssClass="form-control" ></asp:TextBox>
+
+                        </td>
                       </tr>                   
                       <tr>
                         <td>Gender</td>
-                        <td> <asp:TextBox runat="server" ID="Gender" CssClass="form-control"></asp:TextBox> </td>
+                        <td>
+                            <asp:DropDownList runat="server" CssClass="form-control" Width="25%" ID="Gender">
+                                <asp:ListItem>Male</asp:ListItem>
+                                <asp:ListItem>Female</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
                       </tr>
                       <tr>
                         <td>Home Address</td>
@@ -54,15 +63,15 @@
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td> <asp:TextBox runat="server" ID="Email" CssClass="form-control"></asp:TextBox> </td>
+                        <td> <asp:TextBox TextMode="Email" runat="server" ID="Email" CssClass="form-control"></asp:TextBox> </td>
                       </tr>
                       <tr>
                         <td>Phone Number</td>
-                        <td> <asp:TextBox runat="server" ID="Phone_Number" CssClass="form-control"></asp:TextBox> </td>
+                        <td> <asp:TextBox TextMode="Phone" runat="server" ID="Phone_Number" CssClass="form-control"></asp:TextBox> </td>
                       </tr> 
                       <tr>
                         <td>Insurance Number</td>
-                        <td> <asp:TextBox runat="server" ID="Insurrance_Number" CssClass="form-control"></asp:TextBox> </td>
+                        <td> <asp:TextBox TextMode="Number" runat="server" ID="Insurance_Number" CssClass="form-control"></asp:TextBox> </td>
                       </tr> 
                        <tr>
                         <td>License Number </td>
@@ -70,8 +79,8 @@
                       </tr> 
                     </tbody>
                   </table>               
-                    <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Update"/>
-                    <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-primary" Text="Delete"/>
+                    <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Update" OnClick="btnEdit_Click"/>
+                    <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-primary" Text="Cancel" OnClick="btnCancel_Click"/>
                 </div>
               </div>
             </div>  
