@@ -28,7 +28,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container">
         <div class="text-center pad-top"> 
-            <h1> Report <img alt="avatar" src="Images/User_Avatar.png" /></h1>
+            <h1> Report <img alt="avatar" src="../Images/User_Avatar.png" /></h1>
         </div>
 
         <table class="table table-striped">

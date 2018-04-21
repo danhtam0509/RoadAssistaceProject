@@ -13,11 +13,16 @@ public partial class _Default : System.Web.UI.MasterPage
         String session_string = Session["Username"] as string;
         if (!String.IsNullOrEmpty(session_string))
         {
-            if (session_string == "haobui1994")
+            if (session_string == "haobui1994" || session_string == "tamdang1997")
+            {
                 ReportAdmin.Visible = true;
+                Transaction.Visible = true;
+                lblUser.Text = "Admin " + session_string;
+            }
             else
             {
                 AddCar.Visible = true;
+                lblUser.Text = "User " + session_string;
             }
             SignUp.Visible = false;
             LogIn.Visible = false;

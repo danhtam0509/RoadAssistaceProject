@@ -28,8 +28,6 @@
                   <div class="col-md-3">
                     <div class="text-center">
                       <img src="../Images/User_Avatar.png" class="avatar img-circle" alt="avatar">
-          
-                      <input type="file" class="form-control">
                     </div>
                   </div>
                 <div class="col-md-9 personal-info"> 
