@@ -48,7 +48,7 @@
                 <a class="nav-link dropdown-toggle" href="#" ID="ProfileDropdown" visible="false" runat="server" role="button" data-toggle="dropdown"> Profile </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a ID="ProfileLink" class="dropdown-item" href="~/AuthenticatedPages/Profile.aspx" runat="server">View Profile</a>                    
-                      <a ID="AddCar" class="dropdown-item" href="~/AuthenticatedPages/AddCar.aspx" runat="server">Add Car</a>
+                      <a ID="AddCar" class="dropdown-item" href="~/AuthenticatedPages/AddCar.aspx" visible="false" runat="server">Add Car</a>
                       <a ID="ReportAdmin" class="dropdown-item" href="~/AuthenticatedPages/ReportAdmin.aspx" visible="false" runat="server"> Admin Report </a>
                       <a ID="LogOut" class="dropdown-item" runat="server" href="~/Logout.aspx">Logout</a> 
                     </div>
