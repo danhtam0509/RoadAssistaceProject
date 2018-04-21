@@ -13,13 +13,8 @@ public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        String session_string = Session["Username"] as string;
-        if (!String.IsNullOrEmpty(session_string))
-        {
-            Response.Redirect("~/Home.aspx");
-        }
+        
     }
-
 
     protected void username_Validate(object sender, ServerValidateEventArgs args)
     {
@@ -46,23 +41,24 @@ public partial class Login : System.Web.UI.Page
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {        
-        var userName = txtUserName.Text;
-        var password = txtPassword.Text;
+        var userName = txtUserName.Text.ToLower();
+        var password = txtPassword.Text.ToLower().GetHashCode();
  
         if (IsPostBack)
         {        
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
-            string checkUser = "select username, password from Customer where username='"+userName+"' and password='"+password+"'";
+            string checkUser = "select customerid, username, password from Customer where username='"+userName+"'";
             SqlCommand comd = new SqlCommand(checkUser, conn);
             SqlDataReader myReader = comd.ExecuteReader();
             if (myReader.Read() != false)
             {
                 Session["Username"] = userName;
-                string us = (string) myReader["Username"];
+                Session["UserID"] = myReader["CustomerID"];
+                string user = (string) myReader["Username"];
                 FormsAuthentication.RedirectFromLoginPage(userName, true);
                 
-                if ( us == "haobui1994")
+                if ( user == "haobui1994")
                 {
                     Response.Redirect("~/Admin/AdminPage.aspx");
 
