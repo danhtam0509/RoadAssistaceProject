@@ -18,47 +18,47 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      <div class="container max-width-center pad-top">
         <h1 class="text-center"> Add Your Vehicle</h1>
-        <!--User Name-->
+        <!--Car Name-->
         <div class="form-group">
-            <label for="CarName" class="control-label"><b>Car's Name:</b></label>
+            <label for="txtCarName" class="control-label"><b>Car's Name:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="CarName"></asp:TextBox>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtCarName"></asp:TextBox>
             </div>
         </div>
-        <!--Email-->
+        <!--Make-->
         <div class="form-group">
-            <label for="Make" class="control-label"><b>Make: </b></label>
+            <label for="txtMake" class="control-label"><b>Make: </b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Make" ></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Make" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtMake" ></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtMake" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
-        <!--Password-->
+        <!--Model-->
         <div class="form-group">
-            <label for="Model" class="control-label"><b>Model:</b></label>
+            <label for="txtModel" class="control-label"><b>Model:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Model"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Model" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtModel"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="txtModel" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
         </div>
+         <!-- Year --> 
          <div class="form-group">
-            <label for="Year" class="control-label"><b>Year:</b></label>
+            <label for="txtYear" class="control-label"><b>Year:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Year"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Year" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtYear"></asp:TextBox>
             </div>
         </div>
+         <!-- Mileage --> 
          <div class="form-group">
-            <label for="Miles" class="control-label"><b>Mileage:</b></label>
+            <label for="txtMiles" class="control-label"><b>Mileage:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Miles"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Miles" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtMiles"></asp:TextBox>
             </div>
+         <!-- Engine Size --> 
          <div class="form-group">
-            <label for="Esize" class="control-label"><b>Engine Size:</b></label>
+            <label for="txtEsize" class="control-label"><b>Engine Size:</b></label>
             <div>
-                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="Esize"></asp:TextBox>
-                <asp:RequiredFieldValidator runat="server" ErrorMessage="This field is required" Display="Dynamic" ControlToValidate="Esize" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:TextBox Width="400px" runat="server" CssClass="form-control" ID="txtEsize"></asp:TextBox>
             </div>
         </div>
         <!--Button Area-->
