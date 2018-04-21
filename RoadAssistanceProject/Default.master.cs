@@ -13,6 +13,8 @@ public partial class _Default : System.Web.UI.MasterPage
         String session_string = Session["Username"] as string;
         if (!String.IsNullOrEmpty(session_string))
         {
+            if (session_string == "haobui1994")
+                ReportAdmin.Visible = true;
             SignUp.Visible = false;
             LogIn.Visible = false;
             ProfileDropdown.Visible = true;
@@ -21,8 +23,6 @@ public partial class _Default : System.Web.UI.MasterPage
         {
             SignUp.Visible = true;
             LogIn.Visible = true;
-            LogOut.Visible = false;
-            ProfileDropdown.Visible = false;
         }
         setActivePage();
     }

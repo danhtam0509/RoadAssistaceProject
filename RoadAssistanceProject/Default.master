@@ -37,7 +37,7 @@
             <a ID="Services" class="nav-link" href="~/Services.aspx" runat="server"> <i class="fa fa-globe"></i> Services </a>
           </li>
           <li class="nav-item">
-            <a ID="Feedback" class="nav-link" href="~/FeedbackForm.aspx" runat="server"> <i class="fa fa-comments"></i> Feedback Form </a>
+            <a ID="Feedback" class="nav-link" href="~/AuthenticatedPages/FeedbackForm.aspx" runat="server"> <i class="fa fa-comments"></i> Feedback Form </a>
           </li>
           <li class="nav-item">
             <a ID="AboutUs" class="nav-link" href="~/AboutUs.aspx" runat="server"> <i class="fa fa-envelope-square"></i> About us </a>
@@ -45,13 +45,14 @@
         </ul>
           <ul class="navbar-nav mr-sm-2">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" ID="ProfileDropdown" runat="server" role="button" data-toggle="dropdown"> Profile </a>
+                <a class="nav-link dropdown-toggle" href="#" ID="ProfileDropdown" visible="false" runat="server" role="button" data-toggle="dropdown"> Profile </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a ID="ProfileLink" class="dropdown-item" href="~/AuthenticatedPages/Profile.aspx" runat="server">View Profile</a>                    
                       <a ID="AddCar" class="dropdown-item" href="~/AuthenticatedPages/AddCar.aspx" runat="server">Add Car</a>
-                      <a ID="ReportAdmin" class="dropdown-item" href="~/AuthenticatedPages/ReportAdmin.aspx" runat="server"> Admin Report </a>
+                      <a ID="ReportAdmin" class="dropdown-item" href="~/AuthenticatedPages/ReportAdmin.aspx" visible="false" runat="server"> Admin Report </a>
                       <a ID="LogOut" class="dropdown-item" runat="server" href="~/Logout.aspx">Logout</a> 
                     </div>
+                  </a>
               </li>  
               <li class="nav-item"><a ID="SignUp" class="nav-link" href="~/SignUp.aspx" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
               <li class="nav-item"><a ID="LogIn"  class="nav-link" href="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>        
@@ -140,12 +141,5 @@
     <script src="Scripts/popper.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     </form>
-
-    <script>
-        function logout() {
-            window.location.assign("../Logout.aspx");
-        }
-    </script>
-
 </body>
 </html>
