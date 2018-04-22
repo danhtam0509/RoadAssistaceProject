@@ -15,7 +15,6 @@ public partial class _Default : System.Web.UI.MasterPage
         {
             if (session_string == "haobui1994" || session_string == "tamdang1997")
             {
-                ReportAdmin.Visible = true;
                 Transaction.Visible = true;
                 lblUser.Text = "Admin " + session_string;
             }
