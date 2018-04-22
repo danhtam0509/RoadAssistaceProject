@@ -49,7 +49,7 @@ public partial class _Default : System.Web.UI.Page
             SqlDataReader myReader = comd.ExecuteReader();
             if (myReader.Read() != false)
             {
-                Response.Write(@"<script language='javascript'>alert('Account already exists.')</script>");
+                Response.Write(@"<script language='javascript'>alert('Account already exists.');  </script>");
             }
             else
             {

@@ -68,7 +68,7 @@
                     </tbody>
                   </table>               
                     <asp:Button ID="btnEdit" runat="server" CssClass="btn btn-primary" Text="Edit" OnClick="btnEdit_Click"/>
-                    <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-primary" Text="Delete"/>
+                    <asp:Button ID="btnDelete" runat="server" CssClass="btn btn-primary" OnClick="btnDelete_Click" OnClientClick="javascript:alert('Account deleted!!')" Text="Delete"/>
                 </div>
               </div>
             </div>  

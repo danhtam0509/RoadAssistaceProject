@@ -44,4 +44,24 @@ public partial class _Default : System.Web.UI.Page
         if (IsValid)
             Server.Transfer("EditProfile.aspx");
     }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        var userName = Session["Username"];
+
+        // connect to database
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        conn.Open();
+        string deleteUser = "DELETE FROM Customer WHERE Username='" + userName + "'";
+        SqlCommand comd = new SqlCommand(deleteUser, conn);
+        comd.ExecuteNonQuery();
+        conn.Close();
+        Session.Clear();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+
+
+
+    }
+
 }
