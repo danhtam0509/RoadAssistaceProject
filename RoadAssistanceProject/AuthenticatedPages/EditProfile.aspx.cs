@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -10,36 +11,40 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        String session_string = Session["Username"] as string;
-        if (String.IsNullOrEmpty(session_string))
+        if (!IsPostBack)
         {
-            Response.Redirect("~/Login.aspx");
-        }
-        else
-        {
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PublishProfiles\\Road.mdf;Integrated Security=True"))
+            String session_string = Session["Username"] as string;
+            if (String.IsNullOrEmpty(session_string))
             {
-                SqlCommand cmd = new SqlCommand("SELECT*FROM Customer WHERE Username = '" + Session["Username"] + "'", connection);
-                connection.Open();
-                using (SqlDataReader myReader = cmd.ExecuteReader())
+                Response.Redirect("~/Login.aspx");
+            }
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
                 {
-                    // while command worked, assign value to Label controls
-                    while (myReader.Read())
+                    SqlCommand cmd = new SqlCommand("SELECT*FROM Customer WHERE Username = '" + Session["Username"] + "'", connection);
+                    connection.Open();
+                    using (SqlDataReader myReader = cmd.ExecuteReader())
                     {
-                        Name.Text = myReader["FirstName"] + " " + myReader["LastName"];
-                        DOB.Text = Convert.ToDateTime(myReader["DoB"]).ToString("MM/dd/yyyy");
-                        bool gender = Convert.ToInt32(myReader["Gender"]) == 0 ? true : false;
-                        Gender.SelectedIndex = gender == true ? 0 : 1;
-                        Home_Address.Text = myReader["Address"].ToString();
-                        Email.Text = myReader["Email"].ToString();
-                        Phone_Number.Text = myReader["Phone"].ToString();
-                        Insurance_Number.Text = myReader["Insurance"].ToString();
-                        License_Number.Text = myReader["License"].ToString();
+                        // while command worked, assign value to Label controls
+                        while (myReader.Read())
+                        {
+                            Name.Text = myReader["FirstName"] + " " + myReader["LastName"];
+                            DOB.Text = Convert.ToDateTime(myReader["DoB"]).ToString("MM/dd/yyyy");
+                            bool gender = Convert.ToInt32(myReader["Gender"]) == 0 ? true : false;
+                            Gender.SelectedIndex = gender == true ? 0 : 1;
+                            Home_Address.Text = myReader["Address"].ToString();
+                            Email.Text = myReader["Email"].ToString();
+                            Phone_Number.Text = myReader["Phone"].ToString();
+                            Insurance_Number.Text = myReader["Insurance"].ToString();
+                            License_Number.Text = myReader["License"].ToString();
+                        }
+                        myReader.Close();
                     }
+                    connection.Close();
                 }
             }
         }
-
 
     }
 
@@ -57,6 +62,7 @@ public partial class _Default : System.Web.UI.Page
                 lastname += name_parts[i];
 
         //store data into strings
+        String username = Session["Username"] as string;
         dob = DOB.Text;
         home_address = Home_Address.Text;
         email = Email.Text;
@@ -65,14 +71,15 @@ public partial class _Default : System.Web.UI.Page
         license = License_Number.Text;
         phone = Phone_Number.Text;
 
-        using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PublishProfiles\\Road.mdf;Integrated Security=True"))
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
         {
             SqlCommand cmd = new SqlCommand("UPDATE Customer SET FirstName='" + firstname + "' , LastName='" +
                 lastname + "', Email='" + email + "', Address='" + home_address + "', Phone='" +
                 phone + "', DoB='" + dob + "', Gender='" + gender + "', Insurance='" + insurance +
-                "', License='" + license + "' WHERE Username='anna2465'", connection);
+                "', License='" + license + "' WHERE Username='" + username + "'" , connection);
             connection.Open();
             cmd.ExecuteNonQuery();
+            connection.Close();
         }
 
         Response.Redirect("Profile.aspx");
