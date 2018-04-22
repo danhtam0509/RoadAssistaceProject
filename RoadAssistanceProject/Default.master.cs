@@ -20,6 +20,7 @@ public partial class _Default : System.Web.UI.MasterPage
             }
             else
             {
+                UserHistory.Visible = true;
                 AddCar.Visible = true;
                 lblUser.Text = "User " + session_string;
             }

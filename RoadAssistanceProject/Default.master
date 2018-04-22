@@ -48,6 +48,7 @@
                 <a class="nav-link dropdown-toggle" href="~/AuthenticatedPages/Profile.aspx" ID="ProfileDropdown" visible="false" runat="server" role="button" data-toggle="dropdown"> <asp:Label ID="lblUser" runat="server"></asp:Label> </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a ID="ProfileLink" class="dropdown-item" href="~/AuthenticatedPages/Profile.aspx" runat="server">View Profile</a>                    
+                      <a ID="UserHistory" class="dropdown-item" href="~/AuthenticatedPages/UserHistory.aspx" visible="false" runat="server">User History</a>
                       <a ID="AddCar" class="dropdown-item" href="~/AuthenticatedPages/AddCar.aspx" visible="false" runat="server">Add Car</a>
                       <a ID="Transaction" class="dropdown-item" href="~/Admin/AdminPage.aspx" visible="false" runat="server"> All User Transactions </a>
 
